@@ -47,17 +47,15 @@ export function useContextMenu(
         </MenuGroup>
       ));
     };
-    if (items.length) {
-      MenuComponent = (
-        <ContextMenu
-          renderHeader={() => <NodeHeader node={openedNode.node} nodes={nodes} />}
-          renderMenuItems={renderMenuGroupItems}
-          onClose={() => setOpenedNode(undefined)}
-          x={openedNode.event.pageX}
-          y={openedNode.event.pageY}
-        />
-      );
-    }
+    MenuComponent = (
+      <ContextMenu
+        renderHeader={() => <NodeHeader node={openedNode.node} nodes={nodes} />}
+        renderMenuItems={renderMenuGroupItems}
+        onClose={() => setOpenedNode(undefined)}
+        x={openedNode.event.pageX}
+        y={openedNode.event.pageY}
+      />
+    );
   }
 
   if (openedEdge) {
